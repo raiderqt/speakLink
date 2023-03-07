@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  postgresql-db:
+    image: "postgres:15.2"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: 123456
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile-backend
+    ports:
+      - "8080:8080"
+      - "5077:5077"
+    depends_on:
+      - "postgresql-db"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql-db:5432/postgres
