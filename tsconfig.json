@@ -1,0 +1,14 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES6",
+    "sourceMap": true,
+    "outDir": "target/classes/js",
+    "lib": ["es6", "dom"],
+    "removeComments": true
+  },
+  "include": [
+    "src/main/webapp/*"
+  ]
+}

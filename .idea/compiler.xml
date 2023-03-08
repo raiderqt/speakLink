@@ -16,4 +16,7 @@
       <module name="LearningDevProject1" options="-parameters" />
     </option>
   </component>
+  <component name="TypeScriptCompiler">
+    <option name="recompileOnChanges" value="true" />
+  </component>
 </project>

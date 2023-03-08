@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7748da76-0e31-4433-b4e4-8cedfb31d2a0" name="Changes" comment="" />
+    <list default="true" id="7748da76-0e31-4433-b4e4-8cedfb31d2a0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/config/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/config/SpringSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/controller/chat/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/controller/chat/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/service/MessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/service/impl/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/service/impl/MessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/js/jstest2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/js/jstest2.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,11 +20,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="TypeScript File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitRewordedCommitMessages">
@@ -29,6 +43,9 @@
     </option>
     <option name="currentCommit" value="1" />
     <option name="onto" value="0091c352b4536da2e951043a99d6e542b0238895" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -58,39 +75,56 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Zitrix/Desktop/infocigane 2.0/project example/LearningDevProject1",
+    "database.data.extractors.current.export.id": "SQL Inserts",
+    "database.data.extractors.current.id": "SQL Inserts",
+    "last_opened_file_path": "D:/lab/project/WebSite",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.21489161",
     "settings.build.tools.auto.reload": "ALL",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
     "spring.configuration.checksum": "b1f1de854212f799859cfc002bf8df37",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.1.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Zitrix\Desktop\infocigane 2.0\project example\LearningDevProject1\src\main\webapp" />
       <recent name="C:\Users\Zitrix\Desktop\инфоцыгане 2.0\project example\registration-login-springboot-security-thymeleaf-master" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Zitrix\Desktop\infocigane 2.0\project example\LearningDevProject1" />
+      <recent name="C:\Users\Zitrix\Desktop\infocigane 2.0\project example\LearningDevProject1\src\main\webapp" />
+      <recent name="C:\Users\Zitrix\Desktop\infocigane 2.0\project example\LearningDevProject1\src\main\resources\js" />
+      <recent name="C:\Users\Zitrix\Desktop\infocigane 2.0\project example\LearningDevProject1\src\main\resources\js\chat" />
+      <recent name="C:\Users\Zitrix\Desktop\infocigane 2.0\project example\LearningDevProject1\src\main\resources" />
+      <recent name="C:\Users\Zitrix\Desktop\infocigane 2.0\project example\LearningDevProject1\src\main\resources\templates" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn docker-compose:up -Ddocker-compose.detachedMode=true" />
+      <command value="mvn docker-compose:up -DdetachedMode=true" />
+      <command value="mvn docker-compose -f docker-compose.yml up -d --no-color postgresql-db" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
         <option value="Remote" />
+        <option value="SpringBootApplicationConfigurationType" />
         <option value="docker-deploy" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
+  <component name="RunManager" selected="Spring Boot.RegistrationLoginDemoApplication">
     <configuration name="Docker backend" type="Remote">
       <module name="LearningDevProject1" />
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -109,10 +143,20 @@
     </configuration>
     <configuration name="RegistrationLoginDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="LearningDevProject1" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.registrationlogindemo.RegistrationLoginDemoApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.LearningDevProject1.RegistrationLoginDemoApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="docker-compose:down" />
+        <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_docker postgre start" />
       </method>
+    </configuration>
+    <configuration name="Dockerfile-backend" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="docker-desktop-linux">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile-backend" />
+        </settings>
+      </deployment>
+      <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
@@ -143,11 +187,47 @@
         <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="package" />
       </method>
     </configuration>
+    <configuration name="docker-compose.yml.backend: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="docker-desktop-linux">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="backend" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.postgresql-db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="docker-desktop-linux">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="postgresql-db" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="Docker.Dockerfile-backend" />
+      <item itemvalue="Docker.docker-compose.yml.backend: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.postgresql-db: Compose Deployment" />
       <item itemvalue="Remote JVM Debug.Docker backend" />
       <item itemvalue="Spring Boot.RegistrationLoginDemoApplication" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml.postgresql-db: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.backend: Compose Deployment" />
+        <item itemvalue="Docker.Dockerfile-backend" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -163,7 +243,12 @@
       <workItem from="1677714556790" duration="662000" />
       <workItem from="1677717929425" duration="19913000" />
       <workItem from="1678156050729" duration="1080000" />
-      <workItem from="1678157144226" duration="16000" />
+      <workItem from="1678157144226" duration="32444000" />
+      <workItem from="1678463819948" duration="126000" />
+      <workItem from="1678464012271" duration="17268000" />
+      <workItem from="1678539934105" duration="44231000" />
+      <workItem from="1678912457819" duration="9414000" />
+      <workItem from="1678979140654" duration="110948000" />
     </task>
     <task id="LOCAL-00001" summary="Start LearningDevProject1">
       <created>1678155579542</created>
@@ -186,7 +271,84 @@
       <option name="project" value="LOCAL" />
       <updated>1678156530947</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Start">
+      <created>1678157224577</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678157224577</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Разработка">
+      <created>1678249056740</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678249056740</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Разработка">
+      <created>1678463481873</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678463481873</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Разработка">
+      <created>1678535405447</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678535405447</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Разработка">
+      <created>1678540787517</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678540787517</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Разработка">
+      <created>1678550664772</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678550664772</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Разработка">
+      <created>1678631525047</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678631525047</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Разработка">
+      <created>1678816378819</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1678816378819</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Разработка">
+      <created>1679518772258</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1679518772258</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Разработка">
+      <created>1679518842018</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679518842018</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Разработка">
+      <created>1679541068681</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1679541068681</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,30 +359,70 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/chatFunc" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="Controllers" />
     <MESSAGE value="Start LearningDevProject1" />
     <MESSAGE value="gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
+    <MESSAGE value="Start" />
+    <MESSAGE value="Разработка" />
+    <option name="LAST_COMMIT_MESSAGE" value="Разработка" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/registrationlogindemo/controller/AuthController.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="15" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/controller/AuthController.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/controller/AuthController.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/controller/AuthController.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/config/WebConfig.java</url>
+          <line>5</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <condition expression="list.size() &gt; 0" language="JAVA" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/service/impl/MessageServiceImpl.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="68" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
