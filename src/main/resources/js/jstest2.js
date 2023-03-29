@@ -177,7 +177,7 @@ function addMyMessage(message) {
         '                            <div class="svg15 double-check"></div>\n' +
         '                          </div>\n' +
         '                        </div>\n' +
-        '                        <div class="message-arrow"><i class="text-muted la la-angle-down fs-17"></i></div>\n' +
+        '                        <div class="message-arrow"><i class="text-muted bi bi-chevron-down fs-17"></i></div>\n' +
         '                      </div>\n' +
         '                    </div>\n' +
         '                  </div>');
@@ -188,7 +188,7 @@ function addMemberMessage(message) {
         '                    <p class="mb-0 mr-3 pr-4">' + message.text + '</p>\n' +
         '                    <div class="message-options">\n' +
         '                      <div class="message-time">' + timestampToDate(message.timestamp) + '</div>\n' +
-        '                      <div class="message-arrow"><i class="text-muted la la-angle-down fs-17"></i></div>\n' +
+        '                      <div class="message-arrow"><i class="text-muted bi bi-chevron-down fs-17"></i></div>\n' +
         '                    </div>\n' +
         '                  </div>');
 }

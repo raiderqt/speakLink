@@ -16,7 +16,7 @@
 }
 
 
-.btn-circle {
+.btn-circle-menu {
     background-color: rgba(180,180,180,0);
     border-color: rgba(180,180,180,0);
     width: 35px;
@@ -30,12 +30,12 @@
     /*    white-space: normal; !* восстанавливаем свойству значение по умолчанию *!*/
 }
 
-.btn-circle:hover{
+.btn-circle-menu:hover{
     background:rgba(180,180,180,0.75) ;
     border-color: rgba(180,180,180,0.75);
 }
 
-.btn-circle:focus {
+.btn-circle-menu:focus {
     background:rgba(180,180,180,0) ;
     border-color: rgba(180,180,180,0);
     outline: 0!important;
@@ -44,7 +44,7 @@
     outline-style: none!important;
     box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
 }
-.btn-circle::-moz-focus-inner {
+.btn-circle-menu::-moz-focus-inner {
     border: 0;
 }
 .option-horizontal{
