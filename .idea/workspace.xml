@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="ALL" />
+    <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7748da76-0e31-4433-b4e4-8cedfb31d2a0" name="Changes" comment="">
+    <list default="true" id="4fd38cb2-aad8-41b9-82a8-dbe206c726fc" name="Changes" comment="1">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap3.3.0/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/js/bootstrap5.0.0/bootstrap5.0.2.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/config/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/config/SpringSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/controller/chat/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/controller/chat/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/service/MessageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/service/impl/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/service/impl/MessageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/js/jstest2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/js/jstest2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap4.0.0/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/bootstrap-grid.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap4.0.0/bootstrap-grid.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap4.0.0/bootstrap-grid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/bootstrap-grid.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap4.0.0/bootstrap-grid.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/bootstrap-icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap4.0.0/bootstrap-icons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap4.0.0/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/bootstrap-reboot.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap4.0.0/bootstrap-reboot.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap4.0.0/bootstrap-reboot.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/bootstrap-reboot.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap4.0.0/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap4.0.0/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap4.0.0/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap4.0.0/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/boxicons.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap4.0.0/boxicons.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/csstest2.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/chat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/line-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap4.0.0/line-awesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/trapa.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/bootstrap5.0.0/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/gpoupMenu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/groupMenu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/js/bootstrap4.0.0/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/js/bootstrap4.0.0/bootstrap.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/js/bootstrap4.0.0/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/js/bootstrap4.0.0/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/js/bootstrap4.0.0/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/js/bootstrap4.0.0/bootstrap.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/js/bootstrap4.0.0/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/js/bootstrap4.0.0/bootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/js/jstest2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/js/chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/public/group/groupCard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/public/group/groupCard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/public/group/option_horizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/public/profilecard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/users.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,134 +55,54 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="TypeScript File" />
-        <option value="Class" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Test1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitRewordedCommitMessages">
-    <option name="commitMessagesMapping">
-      <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="gitignore" />
-        <option name="rewordedMessage" value="gitignore" />
-      </RewordedCommitMessageMapping>
-    </option>
-    <option name="currentCommit" value="1" />
-    <option name="onto" value="0091c352b4536da2e951043a99d6e542b0238895" />
-  </component>
-  <component name="JpbToolWindowState">
-    <option name="isToolWindowVisible" value="false" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2MFKqLRhOfBUnT2NvphqyrgjQD6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "database.data.extractors.current.export.id": "SQL Inserts",
-    "database.data.extractors.current.id": "SQL Inserts",
-    "last_opened_file_path": "D:/lab/project/WebSite",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.21489161",
-    "settings.build.tools.auto.reload": "ALL",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
-    "spring.configuration.checksum": "b1f1de854212f799859cfc002bf8df37",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.1.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Zitrix\Desktop\infocigane 2.0\project example\LearningDevProject1\src\main\webapp" />
-      <recent name="C:\Users\Zitrix\Desktop\инфоцыгане 2.0\project example\registration-login-springboot-security-thymeleaf-master" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Zitrix\Desktop\infocigane 2.0\project example\LearningDevProject1\src\main\webapp" />
-      <recent name="C:\Users\Zitrix\Desktop\infocigane 2.0\project example\LearningDevProject1\src\main\resources\js" />
-      <recent name="C:\Users\Zitrix\Desktop\infocigane 2.0\project example\LearningDevProject1\src\main\resources\js\chat" />
-      <recent name="C:\Users\Zitrix\Desktop\infocigane 2.0\project example\LearningDevProject1\src\main\resources" />
-      <recent name="C:\Users\Zitrix\Desktop\infocigane 2.0\project example\LearningDevProject1\src\main\resources\templates" />
+      <recent name="C:\Users\RaiderQT\IdeaProjects\LearningDevProject1" />
+      <recent name="C:\Users\RaiderQT\IdeaProjects\LearningDevProject1\src\main\resources\js\bootstrap4.0.0" />
+      <recent name="C:\Users\RaiderQT\IdeaProjects\LearningDevProject1\src\main\resources\js\bootstrap5.0.0" />
+      <recent name="C:\Users\RaiderQT\IdeaProjects\LearningDevProject1\src\main\resources\css\bootstrap4.0.0" />
+      <recent name="C:\Users\RaiderQT\IdeaProjects\LearningDevProject1\src\main\resources\css\bootstrap5.0.0" />
     </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="mvn docker-compose:up -Ddocker-compose.detachedMode=true" />
-      <command value="mvn docker-compose:up -DdetachedMode=true" />
-      <command value="mvn docker-compose -f docker-compose.yml up -d --no-color postgresql-db" />
-    </option>
-  </component>
-  <component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="Remote" />
-        <option value="SpringBootApplicationConfigurationType" />
-        <option value="docker-deploy" />
-      </set>
-    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.RegistrationLoginDemoApplication">
-    <configuration name="Docker backend" type="Remote">
-      <module name="LearningDevProject1" />
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5077" />
-      <option name="AUTO_RESTART" value="false" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="5077" />
-        <option name="LOCAL" value="false" />
-      </RunnerSettings>
-      <method v="2">
-        <option name="com.intellij.docker.debug.DockerBeforeRunTask" />
-      </method>
-    </configuration>
     <configuration name="RegistrationLoginDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="LearningDevProject1" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.LearningDevProject1.RegistrationLoginDemoApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.LearningDevProject1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="docker-compose:down" />
-        <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_docker postgre start" />
       </method>
     </configuration>
     <configuration name="Dockerfile-backend" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="docker-desktop-linux">
@@ -159,33 +114,8 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml">
-        <settings />
-      </deployment>
+      <deployment type="docker-compose.yml" />
       <method v="2" />
-    </configuration>
-    <configuration default="true" type="docker-deploy" factoryName="docker-image" temporary="true">
-      <deployment type="docker-image">
-        <settings />
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile">
-        <settings />
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="docker-desktop-linux">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="envFilePath" value="" />
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2">
-        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="package" />
-      </method>
     </configuration>
     <configuration name="docker-compose.yml.backend: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="docker-desktop-linux">
       <deployment type="docker-compose.yml">
@@ -200,7 +130,7 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.postgresql-db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="docker-desktop-linux">
+    <configuration name="docker-compose.yml.postgresql-db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
@@ -214,11 +144,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="Docker.Dockerfile-backend" />
       <item itemvalue="Docker.docker-compose.yml.backend: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.postgresql-db: Compose Deployment" />
-      <item itemvalue="Remote JVM Debug.Docker backend" />
       <item itemvalue="Spring Boot.RegistrationLoginDemoApplication" />
     </list>
     <recent_temporary>
@@ -226,133 +154,48 @@
         <item itemvalue="Docker.docker-compose.yml.postgresql-db: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.backend: Compose Deployment" />
         <item itemvalue="Docker.Dockerfile-backend" />
+        <item itemvalue="Spring Boot.RegistrationLoginDemoApplication" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="7748da76-0e31-4433-b4e4-8cedfb31d2a0" name="Changes" comment="" />
-      <created>1677358079284</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1677358079284</updated>
-      <workItem from="1677358080492" duration="21181000" />
-      <workItem from="1677618453727" duration="14505000" />
-      <workItem from="1677639687408" duration="10629000" />
-      <workItem from="1677714556790" duration="662000" />
-      <workItem from="1677717929425" duration="19913000" />
-      <workItem from="1678156050729" duration="1080000" />
-      <workItem from="1678157144226" duration="32444000" />
-      <workItem from="1678463819948" duration="126000" />
-      <workItem from="1678464012271" duration="17268000" />
-      <workItem from="1678539934105" duration="44231000" />
-      <workItem from="1678912457819" duration="9414000" />
-      <workItem from="1678979140654" duration="110948000" />
-    </task>
-    <task id="LOCAL-00001" summary="Start LearningDevProject1">
-      <created>1678155579542</created>
+    <task id="LOCAL-00001" summary="Добавил Element &quot;groupCard&quot; и &quot;profileCard&quot; в chat.html">
+      <created>1679835018427</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1678155579542</updated>
+      <updated>1679835018427</updated>
     </task>
-    <task id="LOCAL-00002" summary="gitignore">
-      <created>1678156273120</created>
+    <task id="LOCAL-00002" summary="Убрал сдохший гугл шрифт">
+      <created>1680008785109</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1678156273120</updated>
+      <updated>1680008785109</updated>
     </task>
-    <task id="LOCAL-00003" summary="gitignore">
-      <created>1678156530947</created>
+    <task id="LOCAL-00003" summary="Сделал слетевшие иконки">
+      <created>1680095286420</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1678156530947</updated>
+      <updated>1680095286420</updated>
     </task>
-    <task id="LOCAL-00004" summary="Start">
-      <created>1678157224577</created>
+    <task id="LOCAL-00004" summary="1">
+      <created>1680306760294</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1678157224577</updated>
+      <updated>1680306760294</updated>
     </task>
-    <task id="LOCAL-00005" summary="Разработка">
-      <created>1678249056740</created>
+    <task id="LOCAL-00005" summary="1">
+      <created>1680306986705</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1678249056740</updated>
+      <updated>1680306986705</updated>
     </task>
-    <task id="LOCAL-00006" summary="Разработка">
-      <created>1678463481873</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1678463481873</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Разработка">
-      <created>1678535405447</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1678535405447</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Разработка">
-      <created>1678540787517</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1678540787517</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Разработка">
-      <created>1678550664772</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1678550664772</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Разработка">
-      <created>1678631525047</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1678631525047</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Разработка">
-      <created>1678816378819</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1678816378819</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Разработка">
-      <created>1679518772258</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1679518772258</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Разработка">
-      <created>1679518842018</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1679518842018</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Разработка">
-      <created>1679541068681</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1679541068681</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="6" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -365,7 +208,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/chatFunc" />
+                        <option value="Test" />
                       </list>
                     </value>
                   </entry>
@@ -378,51 +221,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
-    <MESSAGE value="Controllers" />
-    <MESSAGE value="Start LearningDevProject1" />
-    <MESSAGE value="gitignore" />
-    <MESSAGE value="Start" />
-    <MESSAGE value="Разработка" />
-    <option name="LAST_COMMIT_MESSAGE" value="Разработка" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/controller/AuthController.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/controller/AuthController.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/controller/AuthController.java</url>
-          <line>88</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/config/WebConfig.java</url>
-          <line>5</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <condition expression="list.size() &gt; 0" language="JAVA" />
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/LearningDevProject1/service/impl/MessageServiceImpl.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <MESSAGE value="Добавил Element &quot;groupCard&quot; и &quot;profileCard&quot; в chat.html" />
+    <MESSAGE value="Убрал сдохший гугл шрифт" />
+    <MESSAGE value="Сделал слетевшие иконки" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>
