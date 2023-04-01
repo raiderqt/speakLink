@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RegistrationLoginDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <module name="LearningDevProject1" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.LearningDevProject1.RegistrationLoginDemoApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="docker-compose:down" />
+      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="docker-compose:up" />
+    </method>
+  </configuration>
+</component>
