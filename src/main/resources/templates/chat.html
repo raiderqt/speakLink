@@ -5,11 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../css/csstest2.css"/>
-  <link rel="stylesheet" href="../css/bootstrap-icons.css"/>
-  <link rel="stylesheet" href="../css/boxicons.min.css"/>
-  <link rel="stylesheet" href="../css/line-awesome.min.css"/>
+  <link rel="stylesheet" href="../css/bootstrap4.0.0/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/chat.css"/>
+  <link rel="stylesheet" href="../css/bootstrap4.0.0/bootstrap-icons.css"/>
+  <link rel="stylesheet" href="../css/bootstrap4.0.0/boxicons.min.css"/>
+  <link rel="stylesheet" href="../css/bootstrap4.0.0/line-awesome.min.css"/>
+  <link rel="stylesheet" href="../css/groupcard.css"/>
+  <link rel="stylesheet" href="../css/profilecard.css"/>
 </head>
 <body>
 <div class="main-wrapper">
@@ -44,16 +46,17 @@
                       <img src="https://user-images.githubusercontent.com/35243461/168796876-2e363a49-b32c-4218-b5a3-ce12493af69e.jpg" class="rounded-circle img-fluid shadow avatar-xxl">
                     </a>
                     <div class="pt-4 text-center animate4">
-                      <h6 class="fw-300 mb-1" th:text="${authUser.getName()}"/>
+                      <h6 class="fw-300 mb-1" th:text="${authUser.getName()}">Quan Dubina</h6>
                       <p class="text-muted">Java Developer</p>
-                      <div class="mt-4">
-                        <a href="#" class="btn btn-light-skype btn-icon btn-circle btn-sm btn-shadow mr-2"><i class="bx bxl-skype"></i></a>
-                        <a href="#" class="btn btn-light-facebook btn-icon btn-circle btn-sm btn-shadow mr-2"><i class="bx bxl-facebook"></i></a>
-                        <a href="#" class="btn btn-light-twitter btn-icon btn-circle btn-sm btn-shadow mr-2"><i class="bx bxl-twitter"></i></a>
-                        <a href="#" class="btn btn-light-instagram btn-icon btn-circle btn-sm btn-shadow mr-2"><i class="bx bxl-instagram"></i></a>
+                      <div class="mt-4 font-none-1">
+                        <a href="#" class="btn btn-light-skype btn-icon btn-circle btn-sm btn-shadow mr-2 "><i class="bi bi-skype "></i></a>
+                        <a href="#" class="btn btn-light-facebook btn-icon btn-circle btn-sm btn-shadow mr-2 "><i class="bi bi-facebook "></i></a>
+                        <a href="#" class="btn btn-light-twitter btn-icon btn-circle btn-sm btn-shadow mr-2 "><i class="bi bi-twitter "></i></a>
+                        <a href="#" class="btn btn-light-instagram btn-icon btn-circle btn-sm btn-shadow mr-2 "><i class="bi bi-instagram "></i></a>
                       </div>
                     </div>
                   </div>
+
                 </div>
               </div>
               <div class="p-3 chat-header">
@@ -89,7 +92,7 @@
                   <input type="text" class="form-control" placeholder="Search a conversation">
                   <div class="input-group-append prepend-white">
                       <span class="input-group-text pl-2 pr-2">
-                        <i class="fs-17 las la-search drop-shadow"></i>
+                        <i class="fs-17 bi bi-search drop-shadow"></i>
                       </span>
                   </div>
                 </div>
@@ -132,7 +135,7 @@
                             <span>
                               <div class="svg18 pinned"></div>
                             </span>
-                          <i class="text-muted la la-angle-down ml-1 fs-15"></i>
+                          <i class="text-muted bi bi-chevron-down ml-1 fs-15"></i>
                         </div>
                       </div>
                     </div>
@@ -327,7 +330,7 @@
                       <a href="!#">
                         <p id="chat-user-name" class="fw-400 mb-0 text-dark-75">unknown</p>
                       </a>
-                      <p class="sub-caption text-muted text-small mb-0"><i class="la la-clock mr-1"></i>last seen today at 09:15 PM</p>
+                      <p class="sub-caption text-muted text-small mb-0"></i>last seen today at 09:15 PM</p>
                     </div>
                   </div>
                   <div class="flex-shrink-0 margin-auto">
@@ -336,12 +339,6 @@
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="16" x2="12" y2="12"></line>
                         <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                      </svg>
-                    </a>
-                    <a href="#" class="btn btn-sm btn-icon btn-light active text-dark ml-2">
-                      <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather">
-                        <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
                       </svg>
                     </a>
                     <a href="#" class="btn btn-sm btn-icon btn-light active text-dark ml-2">
@@ -365,6 +362,224 @@
                   <div class="svg36 loader-animate3 horizontal-margin-auto mb-2"></div>
                   <div class="text-center letter-space drop-shadow text-uppercase fs-12 w-100 mb-3">Today</div>
                 </div>
+                <!--КАРТА ПРОФИЛЯ-->
+                                                                <div class="">
+                                  <div class="card py-4 profile-card scrollable-chat-panel chat-panel-scroll mb-0 hide-profile-card">
+
+                                    <div class="d-flex justify-content-center align-items-center">
+                                      <div class="round-image">
+                                        <img src="https://i.imgur.com/Mn9kglf.jpg" class="rounded-circle shadow" width="97">
+                                      </div>
+                                    </div>
+
+                                    <div class="text-center">
+                                      <h4 class="mt-3">Noora Smitth</h4>
+                                      <span>Account Manager</span>
+                                      <div><button class="btn btn-primary follow-button">Follow Me</button></div>
+                                      <div class="px-5">
+                                        <p class="profile-card-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll
+                                          scrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scrollscrollable-chat-panel chat-panel-scroll</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                <!--КАРТА ГРУППЫ-->
+                <div class="">
+                    <div class="card py-4 group-card scrollable-chat-panel chat-panel-scroll mb-0 ">
+
+                        <h6 class="group-title">Group members</h6>
+
+
+                        <table class="table table-hover">
+                            <!--Line 1-->
+                            <tr>
+                                <!--Photo-->
+                                <td width="71">
+                                    <div>
+                                        <img src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+                                             alt="photo" class="rounded-circle shadow" height="55"
+                                             width="55">
+                                    </div>
+                                </td>
+                                <!--Name and status-->
+                                <td>
+                                    <div class="ms-0">
+                                        <p class="fw-bold mb-0">Alex Ray</p>
+                                        <small class="text-muted mb-0">Online</small>
+                                    </div>
+                                </td>
+
+                                <!--MENU-->
+                                <td width="40" height="40">
+                                    <button type="button" class="btn btn-circle-menu"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="../img/groupMenu.png"
+                                             class="option-horizontal" alt="menu">
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                                        <li><a class="dropdown-item" href="#">Add</a></li>
+                                        <li><a class="dropdown-item" href="#">Ignore</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                          <!--Line 2-->
+                          <tr>
+                            <!--Photo-->
+                            <td width="71">
+                              <div>
+                                <img src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+                                     alt="photo" class="rounded-circle shadow" height="55"
+                                     width="55">
+                              </div>
+                            </td>
+                            <!--Name and status-->
+                            <td>
+                              <div class="ms-0">
+                                <p class="fw-bold mb-0">Alex Ray</p>
+                                <small class="text-muted mb-0">Online</small>
+                              </div>
+                            </td>
+
+                            <!--MENU-->
+                            <td width="40" height="40">
+                              <button type="button" class="btn btn-circle-menu"
+                                      data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../img/groupMenu.png"
+                                     class="option-horizontal" alt="menu">
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Add</a></li>
+                                <li><a class="dropdown-item" href="#">Ignore</a></li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <!--Line 3-->
+                          <tr>
+                            <!--Photo-->
+                            <td width="71">
+                              <div>
+                                <img src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+                                     alt="photo" class="rounded-circle shadow" height="55"
+                                     width="55">
+                              </div>
+                            </td>
+                            <!--Name and status-->
+                            <td>
+                              <div class="ms-0">
+                                <p class="fw-bold mb-0">Alex Ray</p>
+                                <small class="text-muted mb-0">Online</small>
+                              </div>
+                            </td>
+
+                            <!--MENU-->
+                            <td width="40" height="40">
+                              <button type="button" class="btn btn-circle-menu"
+                                      data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../img/groupMenu.png"
+                                     class="option-horizontal" alt="menu">
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Add</a></li>
+                                <li><a class="dropdown-item" href="#">Ignore</a></li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <!--Line 4-->
+                          <tr>
+                            <!--Photo-->
+                            <td width="71">
+                              <div>
+                                <img src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+                                     alt="photo" class="rounded-circle shadow" height="55"
+                                     width="55">
+                              </div>
+                            </td>
+                            <!--Name and status-->
+                            <td>
+                              <div class="ms-0">
+                                <p class="fw-bold mb-0">Alex Ray</p>
+                                <small class="text-muted mb-0">Online</small>
+                              </div>
+                            </td>
+
+                            <!--MENU-->
+                            <td width="40" height="40">
+                              <button type="button" class="btn btn-circle-menu"
+                                      data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../img/groupMenu.png"
+                                     class="option-horizontal" alt="menu">
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Add</a></li>
+                                <li><a class="dropdown-item" href="#">Ignore</a></li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <!--Line 5-->
+                          <tr>
+                            <!--Photo-->
+                            <td width="71">
+                              <div>
+                                <img src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+                                     alt="photo" class="rounded-circle shadow" height="55"
+                                     width="55">
+                              </div>
+                            </td>
+                            <!--Name and status-->
+                            <td>
+                              <div class="ms-0">
+                                <p class="fw-bold mb-0">Alex Ray</p>
+                                <small class="text-muted mb-0">Online</small>
+                              </div>
+                            </td>
+
+                            <!--MENU-->
+                            <td width="40" height="40">
+                              <button type="button" class="btn btn-circle-menu"
+                                      data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../img/groupMenu.png"
+                                     class="option-horizontal" alt="menu">
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Add</a></li>
+                                <li><a class="dropdown-item" href="#">Ignore</a></li>
+                              </ul>
+                            </td>
+                          </tr>
+
+                        </table>
+
+                        <div class="text-center">
+
+                            <div class="px-5">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
               </div>
               <div class="chat-search pl-3 pr-3">
                 <div class="input-group">
@@ -373,15 +588,15 @@
                       <span class="input-group-text pl-2 pr-2">
                         <i class="chat-upload-trigger fs-19 bi bi-file-earmark-plus ml-2 mr-2"></i>
                         <i class="fs-19 bi bi-emoji-smile ml-2 mr-2"></i>
-                        <i class="fs-19 bi bi-camera ml-2 mr-2"></i>
+                        <!--<i class="fs-19 bi bi-camera ml-2 mr-2"></i>-->
                         <i class="fs-19 bi bi-cursor ml-2 mr-2"></i>
                         <div class="chat-upload">
                           <div class="d-flex flex-column">
-                            <div class="p-2">
+                          <!--  <div class="p-2">
                               <button type="button" class="btn btn-secondary btn-md btn-icon btn-circle btn-blushing">
                                 <i class="fs-15 bi bi-camera"></i>
                               </button>
-                            </div>
+                            </div>-->
                             <div class="p-2">
                               <button type="button" class="btn btn-success btn-md btn-icon btn-circle btn-blushing">
                                 <i class="fs-15 bi bi-file-earmark-plus"></i>
@@ -414,6 +629,8 @@
 <script src="../js/perfect-scrollbar.jquery.min.js"></script>
 <script src="../js/sockjs.js"></script>
 <script src="../js/stomp.min.js"></script>
-<script src="../js/jstest2.js"></script>
+<script src="../js/chat.js"></script>
+<script src="../js/bootstrap5.0.0/bootstrap5.0.2.bundle.js"></script>
+
 </body>
 </html>
