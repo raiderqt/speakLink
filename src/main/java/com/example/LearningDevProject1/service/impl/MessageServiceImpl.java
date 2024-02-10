@@ -66,10 +66,7 @@ public class MessageServiceImpl implements MessageService
 					.toList();
 			result.addAll(listDto);
 		});
-		if(result.isEmpty())
-		{
-			return null;
-		}
+
 		return result;
 	}
 }
