@@ -13,12 +13,14 @@ import org.modelmapper.ModelMapper;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
+
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
 
 @Service
 @Slf4j
@@ -40,12 +42,13 @@ public class MessageServiceImpl implements MessageService {
 
     /**
      * добавляет сообщение пользователю
-     * @param messageDto - сообщение
+     *
+     * @param messageDto     - сообщение
      * @param authentication - залогиненый пользователь
      * @return messageDto
      */
     public MessageDto inputUserMessage(MessageDto messageDto, Authentication authentication) {
-        if (messageDto != null){
+        if (messageDto != null) {
             User user = userRepository.findByEmail(authentication.getName());
             Message message = modelMapper.map(messageDto, Message.class);
             message.setUser(user);
@@ -56,20 +59,27 @@ public class MessageServiceImpl implements MessageService {
 
             }
             messageRepository.save(message);
-            return modelMapper.map(message, MessageDto.class);}
+            return modelMapper.map(message, MessageDto.class);
+        }
         return null;
     }
 
+    /**
+     * Вывод сообщений комнаты
+     *
+     * @param roomId
+     * @param authentication
+     * @return
+     */
     @Override
-    public List<MessageDto> allRoomMessage(UUID roomDto, Authentication authentication) {
+    public List<MessageDto> allRoomMessage(UUID roomId, Authentication authentication) {
         User user = userRepository.findByEmail(authentication.getName());
         Optional<Room> room = roomRepository
-                .findByIdAndUsers(roomDto, user);
+                .findByIdAndUsers(roomId, user);
         List<MessageDto> result = new ArrayList<>();
         room.ifPresent(currentRoom -> {
             List<Message> list = messageRepository.findAllByRoomOrderByTimestamp(currentRoom);
-            List<MessageDto> listDto = list.stream().map(message ->
-                    {
+            List<MessageDto> listDto = list.stream().map(message -> {
                         MessageDto dto = modelMapper.map(message, MessageDto.class);
                         dto.setRoom(null);
                         return dto;
@@ -77,7 +87,6 @@ public class MessageServiceImpl implements MessageService {
                     .toList();
             result.addAll(listDto);
         });
-
         return result;
     }
 }
