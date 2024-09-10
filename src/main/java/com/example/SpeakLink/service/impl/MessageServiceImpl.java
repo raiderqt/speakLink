@@ -67,9 +67,9 @@ public class MessageServiceImpl implements MessageService {
     /**
      * Вывод сообщений комнаты
      *
-     * @param roomId
-     * @param authentication
-     * @return
+     * @param roomId - ID Комнаты
+     * @param authentication - залогиненый пользователь
+     * @return - лист сообщений
      */
     @Override
     public List<MessageDto> allRoomMessage(UUID roomId, Authentication authentication) {

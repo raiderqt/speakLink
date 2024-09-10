@@ -106,14 +106,12 @@ class MessageServiceImplTest {
     @Test
     @DisplayName("тест метода inputUserMessage на состояние ок")
     void inputUserMessage_ok() {
-        MessageDto messageDto = new MessageDto();
-        messageDto.setText("1112");
+        MessageDto messageDto = generateMessageDto();
 
         Message message = new Message();
         User user = generateUser();
 
-        MessageDto expectedMessageDto = new MessageDto();
-        expectedMessageDto.setText("1112");
+        MessageDto expectedMessageDto = generateMessageDto();
 
         when(modelMapper.map(messageDto, Message.class)).thenReturn(message);
         when(modelMapper.map(message, MessageDto.class)).thenReturn(messageDto);
