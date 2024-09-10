@@ -42,8 +42,7 @@ public class MessageServiceImpl implements MessageService {
 
     /**
      * добавляет сообщение пользователю
-     *
-     * @param messageDto     - сообщение
+     * @param messageDto - сообщение
      * @param authentication - залогиненый пользователь
      * @return messageDto
      */
@@ -66,7 +65,6 @@ public class MessageServiceImpl implements MessageService {
 
     /**
      * Вывод сообщений комнаты
-     *
      * @param roomId - ID Комнаты
      * @param authentication - залогиненый пользователь
      * @return - лист сообщений
