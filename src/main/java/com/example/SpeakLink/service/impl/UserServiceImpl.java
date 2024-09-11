@@ -28,21 +28,39 @@ public class UserServiceImpl implements UserService
         this.passwordEncoder = passwordEncoder;
     }
 
+
+
+    /**
+     * создает и добавляет нового пользователя
+     * @param userDto - user(пользователь)
+     */
+
     @Override
     public void saveUser(UserDto userDto) {
-        User user = new User();
-        user.setName(userDto.getFirstName() + " " + userDto.getLastName());
-        user.setEmail(userDto.getEmail());
 
-        //encrypt the password once we integrate spring security
-        //user.setPassword(userDto.getPassword());
-        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
-        /*Role role = roleRepository.findByName("ROLE_ADMIN");
-        if(role == null){
-            role = checkRoleExist();
-        }*/
-        user.setRoles(List.of(checkRoleExist()));
-        userRepository.save(user);
+        //проверка на null
+        if (userDto.getFirstName() != null && !userDto.getFirstName().isEmpty() &&
+                userDto.getLastName() != null && !userDto.getLastName().isEmpty() &&
+                userDto.getEmail() != null && !userDto.getEmail().isEmpty() &&
+                userDto.getPassword() != null && !userDto.getPassword().isEmpty()) {
+
+            User user = new User();
+            user.setName(userDto.getFirstName() + " " + userDto.getLastName());
+            user.setEmail(userDto.getEmail());
+
+            //encrypt the password once we integrate spring security
+            user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+
+            Role role = roleRepository.findByName("user");
+            if(role == null){
+                role = checkRoleExist();
+                user.setRoles(List.of(role));
+            }else user.setRoles(List.of(role));
+
+            userRepository.save(user);
+        } else {
+            throw new IllegalArgumentException("Имя и фамилия не должны быть нулевыми или пустыми");
+        }
     }
 
     @Override
@@ -71,4 +89,5 @@ public class UserServiceImpl implements UserService
         role.setName("user");
         return roleRepository.save(role);
     }
+
 }
