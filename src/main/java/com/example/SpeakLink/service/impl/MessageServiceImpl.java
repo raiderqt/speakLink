@@ -8,6 +8,7 @@ import com.example.SpeakLink.repository.MessageRepository;
 import com.example.SpeakLink.repository.RoomRepository;
 import com.example.SpeakLink.repository.UserRepository;
 import com.example.SpeakLink.service.MessageService;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.Authentication;
@@ -24,21 +25,12 @@ import java.util.UUID;
 
 @Service
 @Slf4j
+@AllArgsConstructor
 public class MessageServiceImpl implements MessageService {
     private final ModelMapper modelMapper;
     private final MessageRepository messageRepository;
     private final UserRepository userRepository;
     private final RoomRepository roomRepository;
-
-    public MessageServiceImpl(UserRepository userRepository,
-                              MessageRepository messageRepository,
-                              ModelMapper modelMapper,
-                              RoomRepository roomRepository) {
-        this.messageRepository = messageRepository;
-        this.modelMapper = modelMapper;
-        this.userRepository = userRepository;
-        this.roomRepository = roomRepository;
-    }
 
     /**
      * добавляет сообщение пользователю

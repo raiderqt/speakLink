@@ -2,6 +2,7 @@ package com.example.SpeakLink.config;
 
 import com.example.SpeakLink.entity.*;
 import com.example.SpeakLink.repository.*;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 @Configuration
 @EnableTransactionManagement
+@ConditionalOnMissingBean(JpaConfigTest.class) // РАБОТАЕТ ??
 public class JpaConfig {
 	private final RoleRepository roleRepository;
 	private final RoomRepository roomRepository;
@@ -36,12 +38,13 @@ public class JpaConfig {
 	@PostConstruct
 	public void initDataForTest() {
 		String roleName = "user";
-		Role roleUser = roleRepository.findByName(roleName);
-		if (roleUser == null) {
-			roleUser = new Role();
-			roleUser.setName("user");
-			roleRepository.saveAndFlush(roleUser);
-		}
+		Optional<Role> roleOptional = roleRepository.findByName(roleName);
+
+		Role roleUser = roleOptional.orElseGet(() -> {
+			Role newRole = new Role();
+			newRole.setName(roleName);
+			return roleRepository.saveAndFlush(newRole);
+		});
 
 		String testRoomName = "Test Room";
 		Room roomTest = roomRepository.findByName(testRoomName);

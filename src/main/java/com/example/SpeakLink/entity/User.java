@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Builder
 @Getter
@@ -45,24 +46,23 @@ public class User
 	private List<Room> rooms = new ArrayList<>();
 
 	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
-
-		User user = (User) o;
-
-		if (!id.equals(user.id)) return false;
-		if (!name.equals(user.name)) return false;
-		if (!email.equals(user.email)) return false;
-		return password.equals(user.password);
-	}
-
-	@Override
 	public int hashCode() {
 		int result = id.hashCode();
 		result = 31 * result + name.hashCode();
 		result = 31 * result + email.hashCode();
 		result = 31 * result + password.hashCode();
 		return result;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		User user = (User) o;
+		return Objects.equals(id, user.id) &&
+				Objects.equals(name, user.name) &&
+				Objects.equals(email, user.email);
+
+
 	}
 }
