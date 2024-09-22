@@ -1,18 +1,23 @@
 package com.example.SpeakLink.service.impl;
 
+import com.example.SpeakLink.Mapper.UserMapper;
 import com.example.SpeakLink.repository.UserRepository;
 import com.example.SpeakLink.service.UserService;
 import com.example.SpeakLink.dto.UserDto;
 import com.example.SpeakLink.entity.Role;
 import com.example.SpeakLink.entity.User;
 import com.example.SpeakLink.repository.RoleRepository;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
-
+@Slf4j
 @Service
+@AllArgsConstructor
 public class UserServiceImpl implements UserService
 {
 
@@ -20,29 +25,30 @@ public class UserServiceImpl implements UserService
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository,
-                           RoleRepository roleRepository,
-                           PasswordEncoder passwordEncoder) {
-        this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
-        this.passwordEncoder = passwordEncoder;
-    }
+
+    /**
+     * создает и добавляет нового пользователя
+     * @param userDto - user(пользователь)
+     */
 
     @Override
-    public void saveUser(UserDto userDto) {
-        User user = new User();
-        user.setName(userDto.getFirstName() + " " + userDto.getLastName());
-        user.setEmail(userDto.getEmail());
+    public User saveUser(UserDto userDto) {
+        if(!userDto.getFirstName().isBlank() && !userDto.getLastName().isBlank() && !userDto.getEmail().isBlank()
+            && !userDto.getPassword().isBlank()){
 
-        //encrypt the password once we integrate spring security
-        //user.setPassword(userDto.getPassword());
-        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
-        /*Role role = roleRepository.findByName("ROLE_ADMIN");
-        if(role == null){
-            role = checkRoleExist();
-        }*/
-        user.setRoles(List.of(checkRoleExist()));
-        userRepository.save(user);
+            User user = UserMapper.INSTANCE.toUser(userDto);
+            user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+            Optional<Role> roleOptional = roleRepository.findByName("user");
+            Role role = roleOptional.orElseGet(this::createRoleExist);
+            user.setRoles(List.of(role));
+
+            userRepository.save(user);
+            log.info("Пользователь зарегистрирован  {}, {} {} ",userDto.getEmail(),userDto.getFirstName(),userDto.getLastName());
+            return user;
+        } else {
+            log.info("Не удалось зарегистрировать пользователя {}, {} {} ",userDto.getEmail(),userDto.getFirstName(),userDto.getLastName());
+            return null;
+        }
     }
 
     @Override
@@ -66,7 +72,7 @@ public class UserServiceImpl implements UserService
         return userDto;
     }
 
-    private Role checkRoleExist() {
+    private Role createRoleExist() {
         Role role = new Role();
         role.setName("user");
         return roleRepository.save(role);

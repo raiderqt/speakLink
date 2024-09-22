@@ -6,7 +6,7 @@ import com.example.SpeakLink.entity.User;
 import java.util.List;
 
 public interface UserService {
-    void saveUser(UserDto userDto);
+    User saveUser(UserDto userDto);
 
     User findByEmail(String email);
 

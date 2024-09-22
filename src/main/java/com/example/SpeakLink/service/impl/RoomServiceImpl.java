@@ -7,6 +7,7 @@ import com.example.SpeakLink.repository.RoomRepository;
 import com.example.SpeakLink.repository.UserRepository;
 import com.example.SpeakLink.service.CorruptedDataException;
 import com.example.SpeakLink.service.RoomService;
+import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -14,18 +15,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
+@AllArgsConstructor
 public class RoomServiceImpl implements RoomService {
 	private final RoomRepository roomRepository;
 	private final UserRepository userRepository;
 	private final ModelMapper modelMapper;
 
-	@Autowired
-	public RoomServiceImpl(RoomRepository roomRepository, UserRepository userRepository,
-						   ModelMapper modelMapper) {
-		this.roomRepository = roomRepository;
-		this.userRepository = userRepository;
-		this.modelMapper = modelMapper;
-	}
 
 	@Override
 	public List<RoomDto> getRoomList(Authentication authentication) {
