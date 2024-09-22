@@ -38,5 +38,4 @@ public interface UserMapper {
         String[] parts = name.split(" ");
         return parts.length > 1 ? parts[1] : "";
     }
-
 }

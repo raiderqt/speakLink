@@ -9,5 +9,4 @@ public class SpeakLinkApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpeakLinkApplication.class, args);
 	}
-
 }
