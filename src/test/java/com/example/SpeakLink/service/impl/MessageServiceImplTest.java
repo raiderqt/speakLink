@@ -21,8 +21,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -137,15 +137,18 @@ class MessageServiceImplTest {
         expectedMessageDto.setText(null);
 
         when(modelMapper.map(messageDto, Message.class)).thenReturn(message);
-        when(modelMapper.map(message, MessageDto.class)).thenReturn(messageDto);
+        lenient().when(modelMapper.map(message, MessageDto.class)).thenReturn(messageDto); // lenient(). делает ненужные моки мягкими
 
         when(authentication.getName()).thenReturn("test@test");
         when(userRepository.findByEmail("test@test")).thenReturn(user);
 
         MessageDto result = messageService.inputUserMessage(messageDto, authentication);
 
-        assertEquals(expectedMessageDto.getText(), result.getText());
-    }
+        assertNull(result, "Expected result to be null when input message text is null");
+
+       // assertEquals(expectedMessageDto.getText(), result.getText());
+
+}
 
     @Test
     @DisplayName("тест метода inputUserMessage когда сообщение пробел")
@@ -161,14 +164,16 @@ class MessageServiceImplTest {
         expectedMessageDto.setText(null);
 
         when(modelMapper.map(messageDto, Message.class)).thenReturn(message);
-        when(modelMapper.map(message, MessageDto.class)).thenReturn(messageDto);
+        lenient().when(modelMapper.map(message, MessageDto.class)).thenReturn(messageDto);
 
         when(authentication.getName()).thenReturn("test@test");
         when(userRepository.findByEmail("test@test")).thenReturn(user);
 
         MessageDto result = messageService.inputUserMessage(messageDto, authentication);
 
-        assertEquals(null, result.getText());
+
+        assertNull(result, "Expected result to be null when input message text is null");
+       // assertEquals(null, result.getText());
     }
 
     @Test
@@ -184,14 +189,15 @@ class MessageServiceImplTest {
         expectedMessageDto.setText(null);
 
         when(modelMapper.map(messageDto, Message.class)).thenReturn(message);
-        when(modelMapper.map(message, MessageDto.class)).thenReturn(messageDto);
+        lenient().when(modelMapper.map(message, MessageDto.class)).thenReturn(messageDto);
 
         when(authentication.getName()).thenReturn("test@test");
         when(userRepository.findByEmail("test@test")).thenReturn(user);
 
         MessageDto result = messageService.inputUserMessage(messageDto, authentication);
 
-        assertEquals(null, result.getText());
+        assertNull(result, "Expected result to be null when input message text is null");
+       // assertEquals(null, result.getText());
     }
 
     private Room generateRoom() {

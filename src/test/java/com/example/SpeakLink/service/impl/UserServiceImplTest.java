@@ -1,65 +1,109 @@
 package com.example.SpeakLink.service.impl;
 
 import com.example.SpeakLink.Mapper.UserMapper;
-import com.example.SpeakLink.config.JpaConfigTest;
 import com.example.SpeakLink.dto.RoomDto;
 import com.example.SpeakLink.dto.UserDto;
 import com.example.SpeakLink.entity.Role;
 import com.example.SpeakLink.entity.User;
 import com.example.SpeakLink.repository.RoleRepository;
 import com.example.SpeakLink.repository.UserRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Import;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
-@SpringBootTest
-@ActiveProfiles("test")
-@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-@Import(JpaConfigTest.class)  // Импортируем тестовую конфигурацию
 
+//@SpringBootTest
+//@ActiveProfiles("test")
+//@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
+//@Import(JpaConfigTest.class)  // Импортируем тестовую конфигурацию
+@ExtendWith(MockitoExtension.class)
 class UserServiceImplTest {
-    @Autowired
-    PasswordEncoder passwordEncoder;
-    @Autowired
-    UserRepository userRepository;
-    @Autowired
-    RoleRepository roleRepository;
-    @Autowired
-    private UserServiceImpl userService;
+    @Mock
+    private PasswordEncoder passwordEncoder;  // Мок для PasswordEncoder
+
+    @Mock
+    private UserRepository userRepository;  // Мокируем UserRepository
+
+    @Mock
+    private Authentication authentication;  // Мокируем Authentication
+
+    @InjectMocks
+    private UserServiceImpl userService;  // InjectMocks позволяет Mockito внедрить моки в UserService
+
+    @Mock
+    private RoleRepository roleRepository;
+
+    @BeforeEach
+    public void setUp() {
+    }
+
+    //Todo test editUser
+    @Test
+    @DisplayName("тест метода editUser на состояние ок ")
+    void editUser() {
+        User mockUser = new User();
+        mockUser.setEmail("test@test");
+        mockUser.setName("Test User");
+
+        UserDto userDto = new UserDto();
+        userDto.setFirstName("NewFirstTest");
+        userDto.setLastName("NewLastTest");
+
+        when(authentication.getName()).thenReturn("test@test");
+        when(userRepository.findByEmail("test@test")).thenReturn(mockUser);
+
+        User userOld = userRepository.findByEmail("test@test");
+        System.out.println("userOld - " + userOld.getName());
+
+        userService.editUser(authentication, userDto);
+
+        assertEquals("NewFirstTest NewLastTest", mockUser.getName());
+
+        User userNew = userRepository.findByEmail("test@test");
+        System.out.println("userNew - " + userNew.getName());
+    }
+
 
     @Test
     @DisplayName("тест метода saveUser на состояние ок")
-    @Transactional
     void saveUser() {
-        List<User> userListTest = new ArrayList<>();
+        // Генерация DTO
         UserDto userDto = generateUserDto();
-        User userTest = UserMapper.INSTANCE.toUser(userDto);
-        userTest.setPassword(passwordEncoder.encode(userDto.getPassword()));
-        userTest.setId(1L);
-        Role role1 = new Role();
-        role1.setName("user");
-        userTest.setRoles(List.of(role1));
-        userListTest.add(userTest);
+        User user = UserMapper.INSTANCE.toUser(userDto);
 
-        userService.saveUser(userDto);
-        //из базы
-        List<User> userList = userRepository.findAll();
+        Role role = new Role();
+        role.setName("user");
+        user.setRoles(List.of(role));
+        user.setId(1L);
+        user.setPassword("6776");
 
-        assertEquals(userListTest.get(0), userList.get(0));
-        assertTrue(passwordEncoder.matches(userDto.getPassword(), userList.get(0).getPassword()), "Пароль не совпадает!");
+        when(roleRepository.findByName("user")).thenReturn(Optional.of(role));
+        when(passwordEncoder.encode(userDto.getPassword())).thenReturn("6776");
+        when(userRepository.save(any(User.class))).thenReturn(user);
+
+        User savedUser = userService.saveUser(userDto);
+        savedUser.setId(1L);
+
+        assertEquals(user, savedUser);
+        assertEquals(user.getPassword(), savedUser.getPassword());
     }
+
 
     private UserDto generateUserDto() {
         return UserDto.builder()

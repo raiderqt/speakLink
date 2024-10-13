@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../css/bootstrap4.0.0/line-awesome.min.css"/>
   <link rel="stylesheet" href="../css/groupcard.css"/>
   <link rel="stylesheet" href="../css/profilecard.css"/>
+  <link rel="stylesheet" href="../css/userProfil.css"/>
 </head>
 <body>
 <div class="main-wrapper">
@@ -77,13 +78,50 @@
                         <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
                       </svg>
                     </a>
-                    <a href="#" class="btn btn-sm btn-icon btn-light active text-dark ml-2">
+
+                    <!-- Кнопка для отображения меню профиля -->
+                    <a href="#" id="profileBtn" class="btn btn-sm btn-icon btn-light active text-dark ml-2">
                       <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather">
                         <circle cx="12" cy="12" r="1"></circle>
                         <circle cx="12" cy="5" r="1"></circle>
                         <circle cx="12" cy="19" r="1"></circle>
                       </svg>
                     </a>
+
+                    <!-- Меню профиля -->
+                    <div class="profile-menu" id="profileMenu">
+                      <button id="openProfileSettings">Настройки профиля</button>
+                    </div>
+
+                    <!-- Настройки профиля -->
+                    <div class="profile-settings" id="profileSettings">
+                      <h3>Profile Settings</h3>
+                      <form id="profileForm">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" required /><br><br>
+
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" required /><br><br>
+
+                        <button type="submit" id="saveUserButton" onclick="changProfile(event)">Save</button>
+                      </form>
+                    </div>
+
+
+
+                    <!-- Меню опции-->
+                    <div class="options-menu" id="optionsMenu">
+                      <button id="openОptionsSettings">Опции</button>
+                    </div>
+                    <!-- Настройки опций -->
+                    <div class="options-settings" id="optionsSettings">
+                      <h3>options Settings</h3>
+                      <h3>SALAM</h3>
+                      <h4>тут должна быть какая то херня</h4>
+                    </div>
+
+
+
                   </div>
                 </div>
               </div>
@@ -590,7 +628,7 @@
                         <i class="chat-upload-trigger fs-19 bi bi-file-earmark-plus ml-2 mr-2"></i>
                         <i class="fs-19 bi bi-emoji-smile ml-2 mr-2"></i>
                         <!--<i class="fs-19 bi bi-camera ml-2 mr-2"></i>-->
-                        <i class="fs-19 bi bi-cursor ml-2 mr-2"></i>
+                        <i id="sendMessageButton" class="fs-19 bi bi-cursor ml-2 mr-2"></i>
                         <div class="chat-upload">
                           <div class="d-flex flex-column">
                           <!--  <div class="p-2">
@@ -626,11 +664,52 @@
     </div>
   </div>
 </div>
+
+
+
+<script>
+  // Получаем элементы
+  const sendButton = document.getElementById('sendButton');
+  const chatInput = document.getElementById('chat-input');
+  const messageOutput = document.getElementById('message-output');
+
+  // Функция отправки сообщения
+  function sendMessage() {
+    const message = chatInput.value; // Получаем введенное сообщение
+
+    // Проверяем, что поле не пустое
+    if (message.trim() === '') {
+      alert('Please write a message before sending.');
+      return;
+    }
+
+    // Имитация отправки сообщения (вывод на экран)
+    messageOutput.textContent = `Message sent to user: "${message}"`;
+
+    // Очищаем поле ввода после отправки
+    chatInput.value = '';
+  }
+
+  // Добавляем событие клика на иконку отправки сообщения
+  sendButton.addEventListener('click', sendMessage);
+
+  // Также можно отправить сообщение нажатием Enter
+  chatInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      sendMessage();
+    }
+  });
+</script>
+
+
 <script src="../js/jquery.min.js"></script>
 <script src="../js/perfect-scrollbar.jquery.min.js"></script>
 <script src="../js/sockjs.js"></script>
 <script src="../js/stomp.min.js"></script>
 <script src="../js/chat.js"></script>
+
+<script src="../js/profil.js"></script>
+
 <script src="../js/bootstrap5.0.0/bootstrap5.0.2.bundle.js"></script>
 
 </body>

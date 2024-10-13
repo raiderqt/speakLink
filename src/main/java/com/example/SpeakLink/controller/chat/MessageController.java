@@ -32,10 +32,7 @@ public class MessageController
 		roomDto.setId(UUID.fromString(roomId));
 		message.setRoom(roomDto);
 
-		if (messageService.inputUserMessage(message, authentication) != null){
-			return List.of(messageService.inputUserMessage(message, authentication));
-		}
-		return null;
+		return List.of(messageService.inputUserMessage(message, authentication));
 	}
 
 	@PostMapping("/message")
