@@ -31,6 +31,7 @@ public class MessageController
 		RoomDto roomDto = new RoomDto();
 		roomDto.setId(UUID.fromString(roomId));
 		message.setRoom(roomDto);
+
 		return List.of(messageService.inputUserMessage(message, authentication));
 	}
 

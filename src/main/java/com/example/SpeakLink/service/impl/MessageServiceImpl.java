@@ -8,9 +8,12 @@ import com.example.SpeakLink.repository.MessageRepository;
 import com.example.SpeakLink.repository.RoomRepository;
 import com.example.SpeakLink.repository.UserRepository;
 import com.example.SpeakLink.service.MessageService;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
+
 
 import java.sql.Timestamp;
 import java.time.Instant;
@@ -18,53 +21,63 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
+
 @Service
-public class MessageServiceImpl implements MessageService
-{
-	private final ModelMapper modelMapper;
-	private final MessageRepository messageRepository;
-	private final UserRepository userRepository;
-	private final RoomRepository roomRepository;
+@Slf4j
+@AllArgsConstructor
+public class MessageServiceImpl implements MessageService {
+    private final ModelMapper modelMapper;
+    private final MessageRepository messageRepository;
+    private final UserRepository userRepository;
+    private final RoomRepository roomRepository;
 
-	public MessageServiceImpl(UserRepository userRepository,
-							  MessageRepository messageRepository,
-							  ModelMapper modelMapper,
-							  RoomRepository roomRepository)
-	{
-		this.messageRepository = messageRepository;
-		this.modelMapper = modelMapper;
-		this.userRepository = userRepository;
-		this.roomRepository = roomRepository;
-	}
+    /**
+     * добавляет сообщение пользователю
+     * @param messageDto - сообщение
+     * @param authentication - залогиненый пользователь
+     * @return messageDto
+     */
+    public MessageDto inputUserMessage(MessageDto messageDto, Authentication authentication) {
+        if (messageDto != null) {
+            User user = userRepository.findByEmail(authentication.getName());
+            Message message = modelMapper.map(messageDto, Message.class);
+            message.setUser(user);
+            message.setTimestamp(Timestamp.from(Instant.now()));
 
-	public MessageDto inputUserMessage(MessageDto messageDto, Authentication authentication)
-	{
-		User user = userRepository.findByEmail(authentication.getName());
-		Message message = modelMapper.map(messageDto, Message.class);
-		message.setUser(user);
-		message.setTimestamp(Timestamp.from(Instant.now()));
-		messageRepository.save(message);
-		return modelMapper.map(message, MessageDto.class);
-	}
+            if (messageDto.getText() == null || messageDto.getText().trim().isEmpty() || messageDto.getText().equals("")) {
+                messageDto.setText(null);
+               // return modelMapper.map(message, MessageDto.class);
+            }else {
+                messageRepository.save(message);
+                return modelMapper.map(message, MessageDto.class);
+            }
+        }
+        return null;
+    }
 
-	@Override
-	public List<MessageDto> allRoomMessage(UUID roomDto, Authentication authentication) {
-		User user = userRepository.findByEmail(authentication.getName());
-		Optional<Room> room = roomRepository
-				.findByIdAndUsers(roomDto, user);
-		List<MessageDto> result = new ArrayList<>();
-		room.ifPresent(currentRoom -> {
-			List<Message> list = messageRepository.findAllByRoomOrderByTimestamp(currentRoom);
-			List<MessageDto> listDto = list.stream().map(message ->
-					{
-						MessageDto dto = modelMapper.map(message, MessageDto.class);
-						dto.setRoom(null);
-						return dto;
-					})
-					.toList();
-			result.addAll(listDto);
-		});
-
-		return result;
-	}
+    /**
+     * Вывод сообщений комнаты
+     * @param roomId - ID Комнаты
+     * @param authentication - залогиненый пользователь
+     * @return - лист сообщений
+     */
+    @Override
+    public List<MessageDto> allRoomMessage(UUID roomId, Authentication authentication) {
+        User user = userRepository.findByEmail(authentication.getName());
+        Optional<Room> room = roomRepository
+                .findByIdAndUsers(roomId, user);
+        List<MessageDto> result = new ArrayList<>();
+        room.ifPresent(currentRoom -> {
+            List<Message> list = messageRepository.findAllByRoomOrderByTimestamp(currentRoom);
+            List<MessageDto> listDto = list.stream().map(message -> {
+                        MessageDto dto = modelMapper.map(message, MessageDto.class);
+                        dto.setRoom(null);
+                        return dto;
+                    })
+                    .toList();
+            result.addAll(listDto);
+        });
+        return result;
+    }
 }
