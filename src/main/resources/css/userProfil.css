@@ -1,0 +1,147 @@
+/*profile*/
+/* Иконка внутри кнопки */
+.profile-btn svg {
+    stroke: white;
+}
+
+/* Меню профиля */
+.profile-menu {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.profile-menu button {
+    background-color: #0088cc;
+    margin-top: 50px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.profile-menu button:hover {
+    background-color: #007bb5;
+}
+
+/* Настройки профиля */
+.profile-settings {
+    display: none;
+}
+
+.profile-settings h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.profile-settings form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-settings label {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.profile-settings input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.profile-settings button {
+    background-color: #0088cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.profile-settings button:hover {
+    background-color: #007bb5;
+}
+
+
+
+/*options*/
+/* Иконка внутри кнопки */
+.profile-btn svg {
+    stroke: white;
+}
+
+/* Меню профиля */
+.options-menu {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.options-menu button {
+    background-color: #0088cc;
+    margin-top: 5px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.options-menu button:hover {
+    background-color: #007bb5;
+}
+
+/* Настройки профиля */
+.options-settings {
+    display: none;
+}
+
+.options-settings h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.options-settings form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.options-settings label {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.options-settings input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.options-settings button {
+    background-color: #0088cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.options-settings button:hover {
+    background-color: #007bb5;
+}

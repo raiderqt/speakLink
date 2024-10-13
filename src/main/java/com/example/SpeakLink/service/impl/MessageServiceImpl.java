@@ -47,10 +47,11 @@ public class MessageServiceImpl implements MessageService {
 
             if (messageDto.getText() == null || messageDto.getText().trim().isEmpty() || messageDto.getText().equals("")) {
                 messageDto.setText(null);
-
+               // return modelMapper.map(message, MessageDto.class);
+            }else {
+                messageRepository.save(message);
+                return modelMapper.map(message, MessageDto.class);
             }
-            messageRepository.save(message);
-            return modelMapper.map(message, MessageDto.class);
         }
         return null;
     }

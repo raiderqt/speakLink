@@ -9,6 +9,7 @@ import com.example.SpeakLink.entity.User;
 import com.example.SpeakLink.repository.RoleRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -63,6 +64,18 @@ public class UserServiceImpl implements UserService
                 .collect(Collectors.toList());
     }
 
+
+    @Override
+    public void editUser(Authentication authentication, UserDto userDto) {
+        User user = userRepository.findByEmail(authentication.getName());
+
+        user.setName(userDto.getFirstName() + " " + userDto.getLastName());
+
+        userRepository.save(user);
+    }
+
+
+
     private UserDto convertEntityToDto(User user){
         UserDto userDto = new UserDto();
         String[] name = user.getName().split(" ");
@@ -77,4 +90,5 @@ public class UserServiceImpl implements UserService
         role.setName("user");
         return roleRepository.save(role);
     }
+
 }
