@@ -137,7 +137,6 @@ class MessageServiceImplTest {
         expectedMessageDto.setText(null);
 
         when(modelMapper.map(messageDto, Message.class)).thenReturn(message);
-        lenient().when(modelMapper.map(message, MessageDto.class)).thenReturn(messageDto); // lenient(). делает ненужные моки мягкими
 
         when(authentication.getName()).thenReturn("test@test");
         when(userRepository.findByEmail("test@test")).thenReturn(user);
@@ -145,9 +144,6 @@ class MessageServiceImplTest {
         MessageDto result = messageService.inputUserMessage(messageDto, authentication);
 
         assertNull(result, "Expected result to be null when input message text is null");
-
-       // assertEquals(expectedMessageDto.getText(), result.getText());
-
 }
 
     @Test
@@ -164,7 +160,6 @@ class MessageServiceImplTest {
         expectedMessageDto.setText(null);
 
         when(modelMapper.map(messageDto, Message.class)).thenReturn(message);
-        lenient().when(modelMapper.map(message, MessageDto.class)).thenReturn(messageDto);
 
         when(authentication.getName()).thenReturn("test@test");
         when(userRepository.findByEmail("test@test")).thenReturn(user);
@@ -173,7 +168,6 @@ class MessageServiceImplTest {
 
 
         assertNull(result, "Expected result to be null when input message text is null");
-       // assertEquals(null, result.getText());
     }
 
     @Test
@@ -189,7 +183,6 @@ class MessageServiceImplTest {
         expectedMessageDto.setText(null);
 
         when(modelMapper.map(messageDto, Message.class)).thenReturn(message);
-        lenient().when(modelMapper.map(message, MessageDto.class)).thenReturn(messageDto);
 
         when(authentication.getName()).thenReturn("test@test");
         when(userRepository.findByEmail("test@test")).thenReturn(user);
@@ -197,7 +190,6 @@ class MessageServiceImplTest {
         MessageDto result = messageService.inputUserMessage(messageDto, authentication);
 
         assertNull(result, "Expected result to be null when input message text is null");
-       // assertEquals(null, result.getText());
     }
 
     private Room generateRoom() {
