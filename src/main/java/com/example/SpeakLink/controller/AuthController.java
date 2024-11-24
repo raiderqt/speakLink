@@ -1,5 +1,6 @@
 package com.example.SpeakLink.controller;
 
+import com.example.SpeakLink.Mapper.UserMapper;
 import com.example.SpeakLink.service.UserService;
 import com.example.SpeakLink.dto.UserDto;
 import com.example.SpeakLink.entity.User;
@@ -84,5 +85,32 @@ public class AuthController {
         return "redirect:/register?success";
     }
 
+
+
+//    TODO test
+//    @GetMapping("/profile")
+//    public String showProfileForm(Model model, Authentication authentication) {
+//        // Получаем информацию о пользователе через authentication
+//        User user = userService.findByEmail(authentication.getName());
+//
+//        UserDto userDto = UserMapper.INSTANCE.toUserDTO(user);
+//
+//        // Добавляем объект userDto в модель, чтобы он был доступен в форме
+//        model.addAttribute("editUser", userDto);
+//
+//        // Возвращаем имя шаблона, который будет отображать страницу профиля
+//        return "profile";
+//    }
+//
+//
+//
+//    @PostMapping("/chat")
+//    public String editUser(@ModelAttribute("editUser") UserDto userDto, Authentication authentication) {
+//        // Сохраняем изменения пользователя
+//        userService.editUser(authentication, userDto);
+//
+//        // Редирект на страницу профиля после успешного сохранения
+//        return "redirect:/profile";
+//    }
 
 }

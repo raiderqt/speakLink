@@ -68,6 +68,32 @@ let stompClient;
 
     }
 
+    //отправка кнопкой в чате
+    function sendMessage() {
+        let element = $('#chat-input');
+        let message = element.val().trim();
+        if (message !== '') {
+            stompClient.send(
+                '/app/message/' + currentRoom.id,
+                {},
+                JSON.stringify({'text': message})
+            );
+            element.val(''); // Очищаем поле ввода после отправки
+        }
+    }
+
+    // Отправка сообщения при нажатии Enter
+    $(document).on('keydown', function (event) {
+        if (event.which === 13) { // Enter
+            sendMessage();
+        }
+    });
+
+    // Отправка сообщения при нажатии на иконку отправки (кнопку с курсором)
+    $('#sendMessageButton').on('click', function () {
+        sendMessage();
+    });
+
 })(jQuery);
 
 let user;
@@ -207,3 +233,33 @@ function timestampToDate(timestamp) {
 }
 
 
+
+
+
+
+
+
+// //меню настройки пользователя
+// const profileBtn = document.getElementById('profileBtn');
+// const profileMenu = document.getElementById('profileMenu');
+// const profileSettings = document.getElementById('profileSettings');
+// const openProfileSettings = document.getElementById('openProfileSettings');
+//
+// // Добавляем обработчик события на кнопку profileBtn для отображения меню
+// profileBtn.addEventListener('click', function(event) {
+//     event.preventDefault(); // Предотвращаем переход по ссылке
+//
+//     // Переключаем видимость блока с меню профиля
+//     if (profileMenu.style.display === 'none' || profileMenu.style.display === '') {
+//         profileMenu.style.display = 'block'; // Показываем меню профиля
+//     } else {
+//         profileMenu.style.display = 'none'; // Скрываем меню профиля
+//         profileSettings.style.display = 'none'; // Заодно скрываем настройки, если они открыты
+//     }
+// });
+//
+// // Добавляем обработчик на кнопку "Настройки профиля"
+// openProfileSettings.addEventListener('click', function() {
+//     profileMenu.style.display = 'none'; // Скрываем меню профиля
+//     profileSettings.style.display = 'block'; // Показываем настройки профиля
+// });

@@ -14,10 +14,12 @@ import com.example.SpeakLink.entity.User;
 import com.example.SpeakLink.repository.RoleRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -35,7 +37,6 @@ public class UserServiceImpl implements UserService {
 
     /**
      * создает и добавляет нового пользователя
-     *
      * @param userDto - user(пользователь)
      */
 
@@ -70,6 +71,16 @@ public class UserServiceImpl implements UserService {
         return users.stream().map(this::convertEntityToDto)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public void editUser(Authentication authentication, UserDto userDto) {
+        User user = userRepository.findByEmail(authentication.getName());
+
+        user.setName(userDto.getFirstName() + " " + userDto.getLastName());
+
+        userRepository.save(user);
+    }
+
 
     private UserDto convertEntityToDto(User user) {
         UserDto userDto = new UserDto();
@@ -119,3 +130,4 @@ public class UserServiceImpl implements UserService {
     }
 
 }
+
