@@ -1,6 +1,8 @@
 package com.example.SpeakLink.service;
 
 import com.example.SpeakLink.dto.RoomDto;
+import com.example.SpeakLink.entity.Room;
+import com.example.SpeakLink.entity.User;
 import org.springframework.security.core.Authentication;
 
 import java.util.List;
@@ -18,7 +20,11 @@ import java.util.List;
  *		если такая настройка установлена.
  *
  */
-public interface RoomService
-{
+
+public interface RoomService{
+
 	List<RoomDto> getRoomList(Authentication authentication);
+
+	Room createPrivateRoom(User user , String nameRoom);
+
 }

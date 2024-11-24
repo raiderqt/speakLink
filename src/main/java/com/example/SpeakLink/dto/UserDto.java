@@ -13,6 +13,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDto
+
 {
     private Long id;
     @NotEmpty(message = "firstName should not be empty")

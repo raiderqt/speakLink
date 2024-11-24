@@ -6,9 +6,16 @@ import com.example.SpeakLink.entity.User;
 import java.util.List;
 
 public interface UserService {
+
     User saveUser(UserDto userDto);
 
     User findByEmail(String email);
 
-    List<UserDto> findAllUsers();
+    List<UserDto> findByName(String name);
+
+    List<UserDto> findAllUsers(User user);
+
+    void saveFriend(Long id , Long friendId);
+
+    User findById (Long id);
 }

@@ -33,7 +33,7 @@ class MessageServiceImplTest {
     @Mock
     RoomRepository roomRepository;
     @InjectMocks
-    MessageServiceImpl messageService;
+    MessageServiceImpl messageServiceImpl;
     @Mock
     Authentication authentication;
     @Mock
@@ -58,7 +58,7 @@ class MessageServiceImplTest {
         when(modelMapper.map(message, MessageDto.class)).thenReturn(messageDto);
 
         List<MessageDto> expectedRoomMessage = List.of(messageDto);
-        List<MessageDto> result = messageService.allRoomMessage(room.get().getId(), authentication);
+        List<MessageDto> result = messageServiceImpl.allRoomMessage(room.get().getId(), authentication);
 
         assertEquals(expectedRoomMessage, result);
     }
@@ -82,7 +82,7 @@ class MessageServiceImplTest {
         when(modelMapper.map(message, MessageDto.class)).thenReturn(messageDto);
         List<MessageDto> expectedRoomMessage = List.of(messageDto);
 
-        List<MessageDto> result = messageService.allRoomMessage(room.get().getId(), authentication);
+        List<MessageDto> result = messageServiceImpl.allRoomMessage(room.get().getId(), authentication);
 
         assertEquals(result, expectedRoomMessage);
     }
@@ -99,7 +99,7 @@ class MessageServiceImplTest {
         when(authentication.getName()).thenReturn("test@test");
 
         assertThrows(NullPointerException.class,
-                () -> messageService.allRoomMessage(room.get().getId(), authentication));
+                () -> messageServiceImpl.allRoomMessage(room.get().getId(), authentication));
     }
 
 
@@ -119,7 +119,7 @@ class MessageServiceImplTest {
         when(authentication.getName()).thenReturn("test@test");
         when(userRepository.findByEmail("test@test")).thenReturn(user);
 
-        MessageDto result = messageService.inputUserMessage(messageDto, authentication);
+        MessageDto result = messageServiceImpl.inputUserMessage(messageDto, authentication);
         assertEquals(expectedMessageDto.getText(), result.getText());
     }
 
@@ -142,7 +142,7 @@ class MessageServiceImplTest {
         when(authentication.getName()).thenReturn("test@test");
         when(userRepository.findByEmail("test@test")).thenReturn(user);
 
-        MessageDto result = messageService.inputUserMessage(messageDto, authentication);
+        MessageDto result = messageServiceImpl.inputUserMessage(messageDto, authentication);
 
         assertEquals(expectedMessageDto.getText(), result.getText());
     }
@@ -166,7 +166,7 @@ class MessageServiceImplTest {
         when(authentication.getName()).thenReturn("test@test");
         when(userRepository.findByEmail("test@test")).thenReturn(user);
 
-        MessageDto result = messageService.inputUserMessage(messageDto, authentication);
+        MessageDto result = messageServiceImpl.inputUserMessage(messageDto, authentication);
 
         assertEquals(null, result.getText());
     }
@@ -189,7 +189,7 @@ class MessageServiceImplTest {
         when(authentication.getName()).thenReturn("test@test");
         when(userRepository.findByEmail("test@test")).thenReturn(user);
 
-        MessageDto result = messageService.inputUserMessage(messageDto, authentication);
+        MessageDto result = messageServiceImpl.inputUserMessage(messageDto, authentication);
 
         assertEquals(null, result.getText());
     }

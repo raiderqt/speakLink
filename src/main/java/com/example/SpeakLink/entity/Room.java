@@ -42,4 +42,11 @@ public class Room
 			joinColumns = {@JoinColumn(name = "ROOM_ID", referencedColumnName = "ID")},
 			inverseJoinColumns = {@JoinColumn(name = "USER_ID", referencedColumnName = "ID")})
 	private List<User> users = new ArrayList<>();
+
+	public Room(String name,String info, RoomType type, List<User> users) {
+		this.name = name;
+		this.info = info;
+		this.type = type;
+		this.users = users;
+	}
 }

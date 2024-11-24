@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -21,20 +22,23 @@ public class AuthController {
 
     private final UserService userService;
 
+
     public AuthController(UserService userService) {
         this.userService = userService;
     }
 
-
-
     @GetMapping("/chat")
-    public String chat(Model model){
+    public String chat(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         User currentUser = userService.findByEmail(authentication.getName());
         model.addAttribute("authUser", currentUser);
 
-        List<UserDto> users = userService.findAllUsers().stream()
-                .filter(userDto -> !userDto.getEmail().equals(currentUser.getEmail())).toList();
+        List<UserDto> users = new ArrayList<>();
+        for (UserDto userDto : userService.findAllUsers(currentUser)) {
+            if (!userDto.getEmail().equals(currentUser.getEmail())) {
+                users.add(userDto);
+            }
+        }
         model.addAttribute("users", users);
 
         return "chat";
@@ -42,9 +46,8 @@ public class AuthController {
 
     @PostMapping("/chat/user")
     @ResponseBody
-    public Object getChatUser(Authentication authentication)
-    {
-        return new Object(){
+    public Object getChatUser(Authentication authentication) {
+        return new Object() {
             final String email = authentication.getName();
 
             public String getEmail() {
@@ -59,7 +62,7 @@ public class AuthController {
     }
 
     @GetMapping("register")
-    public String showRegistrationForm(Model model){
+    public String showRegistrationForm(Model model) {
         UserDto user = new UserDto();
         model.addAttribute("user", user);
         return "register";
@@ -68,7 +71,7 @@ public class AuthController {
     @PostMapping("/register/save")
     public String registration(@Valid @ModelAttribute("user") UserDto user,
                                BindingResult result,
-                               Model model){
+                               Model model) {
         User existing = userService.findByEmail(user.getEmail());
         if (existing != null) {
             result.rejectValue("email", null, "There is already an account registered with that email");
