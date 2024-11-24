@@ -20,7 +20,7 @@ public interface UserService {
 
     User findById (Long id);
 
-    List<UserDto> findAllUsers();
+//    List<UserDto> findAllUsers();
 
     void editUser(Authentication authentication, UserDto userDto);
 }
