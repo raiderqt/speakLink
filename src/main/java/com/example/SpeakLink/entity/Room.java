@@ -4,9 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
+
 @Builder
 @Setter
 @Getter
@@ -41,9 +40,9 @@ public class Room
 			name = "users_rooms",
 			joinColumns = {@JoinColumn(name = "ROOM_ID", referencedColumnName = "ID")},
 			inverseJoinColumns = {@JoinColumn(name = "USER_ID", referencedColumnName = "ID")})
-	private List<User> users = new ArrayList<>();
+	private Set<User> users = new HashSet<>();
 
-	public Room(String name,String info, RoomType type, List<User> users) {
+	public Room(String name,String info, RoomType type, Set<User> users) {
 		this.name = name;
 		this.info = info;
 		this.type = type;

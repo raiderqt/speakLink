@@ -20,7 +20,7 @@ public interface UserService {
 
     User findById (Long id);
 
-//    List<UserDto> findAllUsers();
+    void createGroup(Long userId , String groupName);
 
     void editUser(Authentication authentication, UserDto userDto);
 }

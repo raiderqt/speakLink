@@ -800,5 +800,126 @@ img.shadow {
 
 .font-none-1{
     font-family: none !important;
-
 }
+
+.change_and_group{
+    background: rgb(241, 242, 250);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.createGroup,
+.findFriend{
+    border-radius: 7px;
+    font-size: 12px;
+    padding: 3px 3px;
+}
+
+/*Создание группы*/
+body {
+    font-family: Arial, sans-serif;
+}
+/* Затемнение фона */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Окно */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px;
+}
+
+.popup h3 {
+    margin: 0 0 10px;
+}
+
+.popup input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.popup .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup .buttons button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.popup .buttons .cancel {
+    background: #ccc;
+}
+
+.popup .buttons .submit {
+    background: #007BFF;
+    color: white;
+}
+
+/*Окно группы*/
+
+ /*    !* Стили для затемнения фона *!*/
+ /*.overlay {*/
+ /*    display: none;*/
+ /*    position: fixed;*/
+ /*    top: 0;*/
+ /*    left: 0;*/
+ /*    width: 100%;*/
+ /*    height: 100%;*/
+ /*    background: rgba(0, 0, 0, 0.5);*/
+ /*    z-index: 999;*/
+ /*}*/
+
+/*!* Стили для окна *!*/
+/*.popup {*/
+/*    display: none;*/
+/*    position: fixed;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    background: white;*/
+/*    padding: 20px;*/
+/*    border-radius: 8px;*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+/*    z-index: 1000;*/
+/*}*/
+
+/*!* Кнопка закрытия *!*/
+/*.close-btn {*/
+/*    position: absolute;*/
+/*    top: 10px;*/
+/*    right: 10px;*/
+/*    background: red;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    border-radius: 50%;*/
+/*    width: 25px;*/
+/*    height: 25px;*/
+/*    text-align: center;*/
+/*    line-height: 25px;*/
+/*    cursor: pointer;*/
+/*}*/

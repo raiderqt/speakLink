@@ -114,7 +114,8 @@ public class UserServiceImpl implements UserService {
         Room room = null;
         String nameRoom = user.getName() + " " + "and" + " " + friend.getName();
         boolean add = user.getFriends().add(friend);
-        if (add) {
+        if (add)
+        {
             room = roomService.createPrivateRoom(friend, nameRoom);
             room.getUsers().add(user);
             room.getUsers().add(friend);
@@ -123,6 +124,16 @@ public class UserServiceImpl implements UserService {
             roomMembersRepository.save(new RoomMembers(new RoomMembers.RoomMembersPk(user, room), room.getInfo(), friend, true));
             roomMembersRepository.save(new RoomMembers(new RoomMembers.RoomMembersPk(friend, room), room.getInfo(), user, true));
         }
+    }
+
+    @Override
+    public void createGroup(Long userId , String groupName){
+        User user = userRepository.findById(userId).get();
+
+        Room room = roomService.createPublicRoom(user , groupName);
+        room.getUsers().add(user);
+        roomRepository.save(room);
+        roomMembersRepository.save(new RoomMembers(new RoomMembers.RoomMembersPk(user, room), room.getInfo(), user, true));
 
     }
 

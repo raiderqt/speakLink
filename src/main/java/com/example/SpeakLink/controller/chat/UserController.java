@@ -24,6 +24,7 @@ public class UserController {
         this.userService = userService;
     }
 
+
     @PostMapping("/chat/find")
     public @ResponseBody List<UserDto> findFriend(@RequestBody String firstName)  {
         UserDto user = null;
@@ -54,6 +55,7 @@ public class UserController {
         }
         return ResponseEntity.ok(Map.of("success", true));
     }
+
     @PostMapping("/chat/addFriend")
     public String addFriend(Authentication authentication , @RequestBody String id) {
         Long userId = userService.findByEmail(authentication.getName()).getId();
@@ -66,6 +68,7 @@ public class UserController {
         userService.saveFriend(userId , userService.findById(userDto.getId()).getId());
         return "redirect:/chat/";
     }
+
 }
 
 
