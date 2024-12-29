@@ -10,17 +10,19 @@ public interface UserService {
 
     User saveUser(UserDto userDto);
 
-    User findByEmail(String email);
+    User findUserByEmail(String email);
 
-    List<UserDto> findByName(String name);
+    List<UserDto> findUserByName(String name);
 
     List<UserDto> findAllUsers(User user);
 
+    List<UserDto> findAllUsers();
+
     void saveFriend(Long id , Long friendId);
 
-    User findById (Long id);
-
-    void createGroup(Long userId , String groupName);
+    User findUserById(Long id);
 
     void editUser(Authentication authentication, UserDto userDto);
+
+
 }

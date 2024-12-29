@@ -12,6 +12,7 @@ import com.example.SpeakLink.dto.UserDto;
 import com.example.SpeakLink.entity.Role;
 import com.example.SpeakLink.entity.User;
 import com.example.SpeakLink.repository.RoleRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
@@ -38,6 +39,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * создает и добавляет нового пользователя
+     *
      * @param userDto - user(пользователь)
      */
 
@@ -62,7 +64,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByEmail(String email) {
+    public User findUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 
@@ -74,14 +76,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void editUser(Authentication authentication, UserDto userDto) {
-        User user = userRepository.findByEmail(authentication.getName());
-
-        user.setName(userDto.getFirstName() + " " + userDto.getLastName());
-
-        userRepository.save(user);
+    public List<UserDto> findAllUsers() {
+        List<User> users = userRepository.findAll();
+        return users.stream()
+                .map(this::convertEntityToDto)
+                .collect(Collectors.toList());
     }
 
+    @Override
+    public void editUser(Authentication authentication, UserDto userDto) {
+        User user = userRepository.findByEmail(authentication.getName());
+        user.setName(userDto.getFirstName() + " " + userDto.getLastName());
+        userRepository.save(user);
+    }
 
     private UserDto convertEntityToDto(User user) {
         UserDto userDto = new UserDto();
@@ -89,6 +96,7 @@ public class UserServiceImpl implements UserService {
         userDto.setFirstName(name[0]);
         userDto.setLastName(name[1]);
         userDto.setEmail(user.getEmail());
+        userDto.setId(user.getId());
         return userDto;
     }
 
@@ -99,7 +107,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserDto> findByName(String name) {
+    public List<UserDto> findUserByName(String name) {
         List<UserDto> userDto = new ArrayList<>();
         for (User user : userRepository.findAllByNameStartingWith(name)) {
             userDto.add(userMapper.toUserDTO(user));
@@ -109,13 +117,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveFriend(Long userId, Long friendId) {
-        User user = userRepository.findById(userId).get();
-        User friend = userRepository.findById(friendId).get();
+        User user = userRepository.findById(userId).orElseThrow(EntityNotFoundException::new);
+        User friend = userRepository.findById(friendId).orElseThrow(EntityNotFoundException::new);
         Room room = null;
         String nameRoom = user.getName() + " " + "and" + " " + friend.getName();
         boolean add = user.getFriends().add(friend);
-        if (add)
-        {
+        if (add) {
             room = roomService.createPrivateRoom(friend, nameRoom);
             room.getUsers().add(user);
             room.getUsers().add(friend);
@@ -127,19 +134,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void createGroup(Long userId , String groupName){
-        User user = userRepository.findById(userId).get();
-
-        Room room = roomService.createPublicRoom(user , groupName);
-        room.getUsers().add(user);
-        roomRepository.save(room);
-        roomMembersRepository.save(new RoomMembers(new RoomMembers.RoomMembersPk(user, room), room.getInfo(), user, true));
-
+    public User findUserById(Long id) {
+        return userRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
-    public User findById(Long id) {
-        return userRepository.findById(id).get();
-    }
 
 }
 

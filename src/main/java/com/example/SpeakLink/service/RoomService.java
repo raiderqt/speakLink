@@ -5,7 +5,9 @@ import com.example.SpeakLink.entity.Room;
 import com.example.SpeakLink.entity.User;
 import org.springframework.security.core.Authentication;
 
+import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 /**
  *	Концепция: room представляют собой связь между пользователями и разделяются на типы.
@@ -22,12 +24,16 @@ import java.util.Set;
  *
  */
 
-public interface RoomService{
+public interface RoomService {
 
 	Set<RoomDto> getRoomList(Authentication authentication);
 
-	Room createPrivateRoom(User user , String nameRoom);
+	Room createPrivateRoom(User user, String nameRoom);
 
-	Room createPublicRoom(User user,  String nameRoom);
+	Room createPublicRoom(User user, String nameRoom);
+
+	void createGroup(Long userId, String name);
+
+	void addUserToRoom(List<Long> users, UUID roomId, Long mainUserRoom);
 
 }

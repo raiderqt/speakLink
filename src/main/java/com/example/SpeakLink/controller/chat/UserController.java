@@ -33,7 +33,7 @@ public class UserController {
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
-        return userService.findByName(user.getFirstName());
+        return userService.findUserByName(user.getFirstName());
     }
 
     @PostMapping("/profile")
@@ -57,16 +57,16 @@ public class UserController {
     }
 
     @PostMapping("/chat/addFriend")
-    public String addFriend(Authentication authentication , @RequestBody String id) {
-        Long userId = userService.findByEmail(authentication.getName()).getId();
+    public ResponseEntity<String> addFriend(Authentication authentication , @RequestBody String id) {
+        Long userId = userService.findUserByEmail(authentication.getName()).getId();
         UserDto userDto = null;
         try {
             userDto = objectMapper.readValue(id , UserDto.class);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
-        userService.saveFriend(userId , userService.findById(userDto.getId()).getId());
-        return "redirect:/chat/";
+        userService.saveFriend(userId , userService.findUserById(userDto.getId()).getId());
+        return ResponseEntity.ok("Вы добавили друга" + userDto.getFirstName() + " " + userDto.getLastName());
     }
 
 }

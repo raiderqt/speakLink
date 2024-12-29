@@ -65,4 +65,90 @@
 
 .group-title{
     font-size: 15px;
+    }
+
+/*__________________________*/
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Окно */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 400px;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.popup h3 {
+    margin: 0 0 10px;
+}
+
+.user-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-list li label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-list li input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+.popup .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.popup .buttons button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.popup .buttons .cancel {
+    background: #ccc;
+}
+
+.popup .buttons .add {
+    background: #007BFF;
+    color: white;
+}
+
+.userAddGroup_button{
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 7px;
 }

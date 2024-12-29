@@ -247,6 +247,7 @@
                                                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                                             </svg>
                                         </a>
+
                                         <a href="#" class="btn btn-sm btn-icon btn-light active text-dark ml-2">
                                             <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor"
                                                  stroke-width="2" fill="none" stroke-linecap="round"
@@ -256,6 +257,30 @@
                                                 <circle cx="12" cy="19" r="1"></circle>
                                             </svg>
                                         </a>
+                                        <!--Добавить в группу-->
+
+                                        <!--                                            <button class="userAddGroup_button" id="userAddGroup_openPopup">Добавить-->
+                                        <!--                                                участников-->
+                                        <!--                                            </button>-->
+                                        <img src="../img/img.png" alt="Добавить участников"
+                                             id="userAddGroup_openPopup"
+                                             style="cursor: pointer; width: 24px; height: 24px;">
+
+                                        <!-- Затемнение фона -->
+                                        <div class="overlay" id="userAddGroup_overlay"></div>
+
+                                        <!-- Окно -->
+                                        <div class="popup" id="userAddGroup_popup">
+                                            <h4>Добавить участников</h4>
+                                            <ul class="user-list" id="userList">
+                                                <!-- Список пользователей будет загружен сюда -->
+                                            </ul>
+                                            <div class="buttons">
+                                                <button class="cancel" id="userAddGroup_cancelBtn">Отмена</button>
+                                                <button  class="add" id="userAddGroup_addBtn"  >Добавить</button>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -599,7 +624,7 @@
 
 <script src="../js/bootstrap5.0.0/bootstrap5.0.2.bundle.js"></script>
 <script src="../js/search.js"></script>
-<script src="ajax-request.js"></script>
+<!--<script src="ajax-request.js"></script>-->
 
 </body>
 </html>

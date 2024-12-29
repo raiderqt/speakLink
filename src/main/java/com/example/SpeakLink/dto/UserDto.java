@@ -12,9 +12,7 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDto
-
-{
+public class UserDto {
     private Long id;
     @NotEmpty(message = "firstName should not be empty")
     private String firstName;

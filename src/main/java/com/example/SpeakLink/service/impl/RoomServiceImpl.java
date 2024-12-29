@@ -2,18 +2,20 @@ package com.example.SpeakLink.service.impl;
 
 import com.example.SpeakLink.dto.RoomDto;
 import com.example.SpeakLink.entity.Room;
+import com.example.SpeakLink.entity.RoomMembers;
 import com.example.SpeakLink.entity.User;
+import com.example.SpeakLink.repository.RoomMembersRepository;
 import com.example.SpeakLink.repository.RoomRepository;
 import com.example.SpeakLink.repository.UserRepository;
 import com.example.SpeakLink.service.CorruptedDataException;
 import com.example.SpeakLink.service.RoomService;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Service
 @AllArgsConstructor
@@ -21,15 +23,16 @@ public class RoomServiceImpl implements RoomService {
     private final RoomRepository roomRepository;
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
+    private final RoomMembersRepository roomMembersRepository;
 
     @Override
-    public Room createPrivateRoom(User user,  String nameRoom) {
-        return new Room(user.getName(),nameRoom, Room.RoomType.PRIVATE, new HashSet<>());
+    public Room createPrivateRoom(User user, String nameRoom) {
+        return new Room(user.getName(), nameRoom, Room.RoomType.PRIVATE, new HashSet<>());
     }
 
     @Override
-    public Room createPublicRoom(User user,  String nameRoom) {
-        return new Room(user.getName(),nameRoom, Room.RoomType.PUBLIC, new HashSet<>());
+    public Room createPublicRoom(User user, String nameRoom) {
+        return new Room(user.getName(), nameRoom, Room.RoomType.PUBLIC, new HashSet<>());
     }
 
     @Override
@@ -59,5 +62,27 @@ public class RoomServiceImpl implements RoomService {
             list.add(apply);
         }
         return list;
+    }
+
+    @Override
+    public void createGroup(Long userId, String groupName) {
+        User user = userRepository.findById(userId).orElseThrow(EntityNotFoundException::new);
+        Room room = createPublicRoom(user, groupName);
+        room.getUsers().add(user);
+        roomRepository.save(room);
+        roomMembersRepository.save(new RoomMembers(new RoomMembers.RoomMembersPk(user, room), groupName, user, true));
+    }
+
+    @Override
+    public void addUserToRoom(List<Long> users, UUID roomId, Long mainUser) {
+        Room room = roomRepository.findRoomsById(roomId).orElseThrow(EntityNotFoundException::new);
+        User mainUserRoom = userRepository.findById(mainUser).orElseThrow(EntityNotFoundException::new);
+        for (Long userId : users) {
+            User user = userRepository.findById(userId).orElseThrow(EntityNotFoundException::new);
+            room.getUsers().add(user);
+            roomMembersRepository.save(
+                    new RoomMembers(new RoomMembers.RoomMembersPk(user, room), room.getInfo(), mainUserRoom, true));
+        }
+
     }
 }

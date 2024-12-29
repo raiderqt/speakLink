@@ -1,6 +1,5 @@
 package com.example.SpeakLink.controller;
 
-import com.example.SpeakLink.Mapper.UserMapper;
 import com.example.SpeakLink.service.UserService;
 import com.example.SpeakLink.dto.UserDto;
 import com.example.SpeakLink.entity.User;
@@ -31,7 +30,7 @@ public class AuthController {
     @GetMapping("/chat")
     public String chat(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User currentUser = userService.findByEmail(authentication.getName());
+        User currentUser = userService.findUserByEmail(authentication.getName());
         model.addAttribute("authUser", currentUser);
 
         List<UserDto> users = new ArrayList<>();
@@ -42,7 +41,7 @@ public class AuthController {
         }
         model.addAttribute("users", users);
 
-        return "chat";
+        return "/chat";
     }
 
     @PostMapping("/chat/user")
@@ -50,7 +49,6 @@ public class AuthController {
     public Object getChatUser(Authentication authentication) {
         return new Object() {
             final String email = authentication.getName();
-
             public String getEmail() {
                 return email;
             }
@@ -73,7 +71,7 @@ public class AuthController {
     public String registration(@Valid @ModelAttribute("user") UserDto user,
                                BindingResult result,
                                Model model) {
-        User existing = userService.findByEmail(user.getEmail());
+        User existing = userService.findUserByEmail(user.getEmail());
         if (existing != null) {
             result.rejectValue("email", null, "There is already an account registered with that email");
         }
