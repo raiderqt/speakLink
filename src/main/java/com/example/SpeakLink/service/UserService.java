@@ -7,11 +7,22 @@ import org.springframework.security.core.Authentication;
 import java.util.List;
 
 public interface UserService {
+
     User saveUser(UserDto userDto);
 
-    User findByEmail(String email);
+    User findUserByEmail(String email);
+
+    List<UserDto> findUserByName(String name);
+
+    List<UserDto> findAllUsers(User user);
 
     List<UserDto> findAllUsers();
 
+    void saveFriend(Long id , Long friendId);
+
+    User findUserById(Long id);
+
     void editUser(Authentication authentication, UserDto userDto);
+
+
 }

@@ -41,6 +41,7 @@ public class SpringSecurityConfig
 				.authorizeHttpRequests((authorize) ->
 						authorize
 								.requestMatchers("/css/**", "/js/**", "/img/**", "/img/bootstrap-icons/**").permitAll()
+								.requestMatchers("/chat/find" ,"/chat/find/**").permitAll()
 								.requestMatchers("/register/**").permitAll()
 								.requestMatchers("/index").permitAll()
 								.requestMatchers("/users").hasRole("ADMIN")
