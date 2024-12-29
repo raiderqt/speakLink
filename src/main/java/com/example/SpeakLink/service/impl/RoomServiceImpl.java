@@ -58,8 +58,7 @@ public class RoomServiceImpl implements RoomService {
                      */
                 }
             }
-            RoomDto apply = map;
-            list.add(apply);
+            list.add(map);
         }
         return list;
     }
