@@ -3,10 +3,11 @@ package com.example.SpeakLink.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.jpa.repository.EntityGraph;
-import org.springframework.data.jpa.repository.Query;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
+
 
 @Builder
 @Setter
@@ -19,7 +20,6 @@ public class Room {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
-    //@Type(type="uuid-char")
     private UUID id;
 
     @Column(nullable = false)
